@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DriverFinanzas">
+    <meta name="apple-itunes-app" content="app-id=1234567890">
+    
+    <!-- General Meta -->
+    <meta name="theme-color" content="#090b11">
+    <meta name="description" content="App de gestión financiera para conductores de plataformas">
+    <meta name="keywords" content="finanzas,taxi,uber,cabify,didi">
+    
+    <!-- Manifest & Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23090b11' width='192' height='192'/><circle cx='96' cy='96' r='60' fill='%2310b981'/><path d='M80 96L90 110L110 80' stroke='%23090b11' stroke-width='6' fill='none' stroke-linecap='round'/></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23090b11' width='180' height='180'/><circle cx='90' cy='90' r='55' fill='%2310b981'/><path d='M75 90L83 102L103 75' stroke='%23090b11' stroke-width='5' fill='none' stroke-linecap='round'/></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <title>DriverFinanzas - Gestión Financiera para Conductores</title>
+    <style>
+        * { -webkit-user-select: none; user-select: none; }
+        body { margin: 0; padding: 0; background: #090b11; }
+        #root { display: flex; flex-direction: column; min-height: 100vh; }
+        .safe-bottom { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+        @supports (padding: max(0px)) {
+            body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- React + ReactDOM via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Lucide React Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tu App (Inline para evitar cors) -->
+    <script type="module">
+        // Importar el código de tu app
+        const { default: App } = await import('./app.jsx');
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>
