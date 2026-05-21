@@ -1,0 +1,19 @@
+{
+  "name": "DriverFinanzas",
+  "short_name": "DriverFinanzas",
+  "description": "Gestión financiera para conductores",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090b11",
+  "theme_color": "#10b981",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23090b11' width='180' height='180'/><circle cx='90' cy='90' r='55' fill='%2310b981'/><path d='M75 90L83 102L103 75' stroke='%23090b11' stroke-width='5' fill='none' stroke-linecap='round'/></svg>",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}
